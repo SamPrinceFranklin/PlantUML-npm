@@ -1,0 +1,30 @@
+{
+  "name": "plantuml-txt",
+  "version": "1.0.0",
+  "description": "NPM Package that can convert the PlantUML code in a .txt file to a .png file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamPrinceFranklin/PlantUML-npm.git"
+  },
+  "keywords": [
+    "plantuml",
+    "txt",
+    "png",
+    "uml"
+  ],
+  "author": "SamPrinceFranklin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamPrinceFranklin/PlantUML-npm/issues"
+  },
+  "homepage": "https://github.com/SamPrinceFranklin/PlantUML-npm#readme",
+  "dependencies": {
+    "plantuml-encoder": "^1.4.0",
+    "readline": "^1.3.0",
+    "request": "^2.88.2"
+  }
+}
