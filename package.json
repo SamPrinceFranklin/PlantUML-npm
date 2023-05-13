@@ -4,7 +4,7 @@
   "description": "NPM Package that can convert the PlantUML code in a .txt file to a .png file",
   "main": "index.js",
   "scripts": {
-    "build": "cp index.js dist/index.js"
+    "build": "mkdir -p dist && cp index.js dist/index.js"
   },
   "repository": {
     "type": "git",
