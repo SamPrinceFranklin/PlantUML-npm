@@ -16,8 +16,11 @@ jobs:
 
       - name: Update README
         run: |
-          # Extract version from package.json
           VERSION=$(node -p "require('./package.json').version")
+          sed -i "s/\[![Version]\([^]]*\)]/[![Version]($VERSION)]/g" README.md
+
+      
+        
 
           # Replace version placeholder in README.md with the extracted version
           sed -i "s/\[![Version\]\(.*\)\]/[![Version]($VERSION)]/g" README.md
