@@ -1,6 +1,6 @@
 {
   "name": "plantuml-txt",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "NPM Package that can convert the PlantUML code in a .txt file to a .png file",
   "main": "index.js",
   "scripts": {
