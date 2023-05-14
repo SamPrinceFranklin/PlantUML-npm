@@ -1,4 +1,4 @@
-## PlantUML-txt
+## PlantUML-txt [![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)](https://www.npmjs.com/package/plantuml-txt)
 
 **PlantUml-txt** is an npm package that allows you to convert **PlantUML code** in `**.txt**` format to `**.png**` files. It provides a convenient way to generate visual representations of your PlantUML diagrams for use in your projects or documentation.
 
