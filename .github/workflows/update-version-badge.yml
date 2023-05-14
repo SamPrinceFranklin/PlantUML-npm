@@ -34,6 +34,10 @@ jobs:
           git config --global user.email "samprince.franklink2020@vitstudent.ac.in"
           git config --global user.name "SamPrinceFranklin"
 
+      - name: Commit unstaged changes
+        run: |
+          git add package-lock.json
+          git commit -m "Update package-lock.json"
 
       - name: Commit and push changes
         run: |
