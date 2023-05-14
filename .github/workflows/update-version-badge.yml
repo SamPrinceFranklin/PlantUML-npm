@@ -29,10 +29,12 @@ jobs:
         run: |
           sed -i "s|!\\[Version\\].*|![Version](https://img.shields.io/badge/Version-${{ steps.version.outputs.version }}-blue.svg)|" README.md
 
+      - name: Configure Git user
+        run: |
+          git config --global user.email "samprince.franklink2020@vitstudent.ac.in"
+
       - name: Commit and push changes
         run: |
-          git config --local user.email "samprince.franklink2020@vitstudent.ac.in"
-          git config --local user.name "SamPrinceFranklin"
           git add README.md
           git commit -m "Update version badge"
-          git push origin master
+          git push origin main
