@@ -1,0 +1,41 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Update README
+        run: |
+          # Extract the version from package.json
+          VERSION=$(node -p "require('./package.json').version")
+          
+          # Update the version in README.md
+          sed -i "s/Version-[0-9]\+.[0-9]\+.[0-9]\+/Version-$VERSION/g" README.md
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "samprince.franklink2020@vitstudent.ac.in"
+          git config --local user.name "SamPrinceFranklin"
+          git add README.md
+          git add package-lock.json
+          git add package.json
+          git commit -m "Update version in README.md" --signoff
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          branch: ${{ github.ref }}
