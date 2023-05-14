@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '14'
 
       - name: Install dependencies
         run: npm install
@@ -32,7 +32,7 @@ jobs:
       - name: Configure Git user
         run: |
           git config --global user.email "samprince.franklink2020@vitstudent.ac.in"
-          git config --global user.name "SamPrinceFranklin"
+          git config --global user.name "SamPrinceFranlin"
 
       - name: Commit unstaged changes
         run: |
@@ -43,4 +43,4 @@ jobs:
         run: |
           git add README.md
           git commit -m "Update version badge"
-          git push origin main
+          git push origin main || echo "No changes to push"
