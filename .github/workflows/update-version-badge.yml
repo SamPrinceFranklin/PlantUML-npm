@@ -3,7 +3,7 @@ name: Update Version Badge
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   update_version_badge:
