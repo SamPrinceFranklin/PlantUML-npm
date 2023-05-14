@@ -1,0 +1,30 @@
+name: Display Version Badge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  display_version_badge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Get version number
+        id: version
+        run: echo "::set-output name=version::$(node -p "require('./package.json').version")"
+
+      - name: Update README.md
+        run: |
+          sed -i 's|!\[Version\].*|![Version](https://img.shields.io/badge/Version-${{ steps.version.outputs.version }}-blue.svg)|' README.md
